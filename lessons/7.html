@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jeffrey Barlow's Learn to Program Website - Home</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+    <div id="page-wrap">
+        <div id="banner"><img src = "../images/banner.png"></img></div>
+        <div class="nav">
+            <table>
+                <tr>
+                    <th><a href="../index.html">Home</a></th>
+                    <th><a href="../lessons.html">Lessons</a></th>
+                    <th><a href="../projects.html">Projects</a></th>
+                    <th><a href="../about.html">About</a></th>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="content">
+            <h1>Lesson 7: Arrays</h1>
+            
+            <p>An array is used to hold a bunch of variables so that they will all be next to each other in memory,
+            so that they can all be easily accessed. Think of it like having a shelf with a bunch of books on it.
+            Here is how to create and array that will hold 5 integers: </p>
+
+	        <p class="indent">int[5] arr;</p>
+
+            <p>The value inside the square brackets is the size of the array.</p>
+
+            <p>This is how you access items in your array:</p>
+
+        	<p class="indent">arr[0]; <br/>
+        	arr[1]; <br/>
+        	arr[2]; <br/>
+        	arr[3]; <br/>
+        	arr[4]; </p>
+
+            <p>The address of the first item is 0. The address of the last item is going to be the size of the array minus 1.
+            So arr[4] is the last item in the array.</p>
+
+            <p>Each element in the array can be treated as its own variable. You can perform math on it,
+            you can set its value. Anything that you can do with a variable you can do with an array item.
+            The code below plays around with elements in the array:</p>
+
+            <div class="program"><script src="//repl.it/embed/HCb5/0.js"></script></div>
+
+            <p>You can populate the contents of an array when you create it, like so:</p>
+
+            <p class="indent">int arr[] = {1, 2, 3, 4, 5 };</p>
+
+            <p>You can leave out the size of the array when you are initializing it. 
+            The compiler is smart enough to know that if you initialize an array with 5 values then the
+            size of the array must also be 5. However, if you do not initialize, then you will need to
+            specify the size.</p>
+
+            <p>When you create an array without initializing it, the array will be full of junk data.</p>
+
+            <div class="program"><script src="//repl.it/embed/HCb6/0.js"></script></div>
+
+            <p>However, if you initialize one of the values, then all of the other ones will be initialized to 0.</p>
+
+            <div class="program"><script src="//repl.it/embed/HCb8/0.js"></script></div>
+
+            <p>Of course, you can create arrays for all the variable types: floats, doubles, chars, and strings.
+            Actually, strings themselves are just arrays of characters. 
+            The original C programming language didn't even have strings, just character arrays.</p>
+
+            <p>We talked about for loops in the previous section. For loops are particularly useful for accessing 
+            the elements of array. The program below fills each item with an array with random numbers.</p>
+
+            <div class="program"><script src="//repl.it/embed/HCba/0.js"></script></div>
+
+            <p>I haven't gone into random numbers yet, so I thought I would bring it up here.
+            The procedure for creating arrays is as follows:</p>
+
+            <p>You will need to put these at the top of your code:</p>
+
+            <p class="indent">#include &ltcstdlib&gt <br/>
+            #include &ltctime&gt</p>
+
+            <p>Next you will need to seed the random number generator. The easiest way to do this
+            is to use this line of code:</p>
+
+            <p class="indent">srand(time(NULL));</p>
+
+            <p>This uses the current time as the seed for the random number generator. </p>
+            
+            <p>Then whenever you want a random number, you can do something like this: </p>
+            
+            <p class="indent">int randomNumber = rand(); </p>
+            
+            <p>If you want your random number to be in a certain range, you can use the modulo operator: </p>
+            
+            <p class="indent">int randomNumber = rand() % 6; </p>
+            
+            <p>This will give you a number between 0 and 5. If you want the number to be between 1 and 6,
+            simply add one to the random number: </p>
+            
+            <p class="indent">int randomNumber = rand() % 6 + 1; </p>
+            
+            <p>This will give you a random number between 1 and 6, which would be good to simulate a dice roll.
+            If you are interested in completing the casino project (listed in the projects tab), 
+            then you can refer back to this. </p>
+             
+            <p>One last thing I want to mention about arrays. If you want to copy an array, you might think it
+            would be as simple as this: </p>
+            
+            <p class="indent">yourArray = myArray; </p>
+            
+            <p>But in actuality, this will not work. To copy the contents of an array to another: 
+            you will need to use a for loop like so: </p>
+            
+            <p class="indent">for(int i = 0; i < 10; i++) <br/>
+            { <br/>
+            &nbsp &nbsp &nbsp yourArray[i] = myArray[i]; <br/>
+            } </p>
+            
+            <p>On to some exercises! </p>
+            
+            <div id="1" class="tabcontent">
+                <h3>Exercise 1: Holding user input </h3>
+                
+                <p>Ask the user how many values they want to store. Read in a bunch of values from the user
+                and store values in array. Then print the contents of the array using a for loop, along with
+                the sum and the average. </p>
+            </div>
+                
+            <div id="2" class="tabcontent">
+                <h3>Exercise 2: How many? </h3>
+                
+                <p>Same setup as before, but this time count the number of evens, odds, zeros, and negatives. </p>
+            </div>
+                
+            <div id="3" class="tabcontent">
+                <h3>Exercise 3: Lotto numbers </h3>
+                
+                <p>We need five numbers between 1 and 41. Use the random number generator and put these numbers
+                in an array. Then print these to the screen. </p>
+            
+                <p>For extra challenge, try and make it so that all of these numbers are different 
+                (there are many different ways to do this, think about it). </p>
+            </div>
+            
+            <div class="tab">
+                <button class="tablinks" onclick="openExercise(event, '1')" id="defaultOpen">Exercise 1</button>
+                <button class="tablinks" onclick="openExercise(event, '2')">Exercise 2</button>
+                <button class="tablinks" onclick="openExercise(event, '3')">Exercise 3</button>
+            </div>
+            
+            <script src="tabs.js"></script>
+            
+            <div class="program"><script src="//repl.it/embed/GiUn/1.js"></script></div>
+                     
+            <ul class="pager">
+              <li><a href="6.html">Previous Lesson</a></li>
+              <li><a href="8.html">Next Lesson</a></li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html> 

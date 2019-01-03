@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jeffrey Barlow's Learn to Program Website - Home</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+    <div id="page-wrap">
+        <div id="banner"><img src = "../images/banner.png"></img></div>
+        <div class="nav">
+            <table>
+                <tr>
+                    <th><a href="../index.html">Home</a></th>
+                    <th><a href="../lessons.html">Lessons</a></th>
+                    <th><a href="../projects.html">Projects</a></th>
+                    <th><a href="../about.html">About</a></th>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="content">
+            <h1>Lesson 5: Decision Making</h1>
+            
+            <p>We want our programs to be able to perform different actions depending on certain conditions. 
+            To do this, we will use if..else... statements. These are used in all kinds of programming languages,
+            not just C++. Here is the basic structure of an if.. else.. statement:</p>
+
+            <p class="indent">if(some condition) <br/>
+            { <br/>
+            &nbsp &nbsp &nbsp some things to do <br/>
+            } <br/>
+            else <br/>
+            { <br/>
+            &nbsp &nbsp &nbsp if the condition is not met, do this instead <br/>
+            } </p>
+            
+            <p>Note the else part is optional. Also, if there is just one line of code after your if,
+            then the curly braces are optional. If you want to check for multiple conditions,
+            you can use if..else if.. else structure.</p>
+            
+        	<p class="indent">if(some condition) <br/>
+        	{ <br/>
+        	&nbsp &nbsp &nbsp some things to do <br/>
+        	} <br/>
+        	else if(another condition) <br/>
+        	{ <br/>
+        	&nbsp &nbsp &nbsp some other things to do <br/>
+        	} <br/>
+        	else <br/>
+            { <br/>
+            &nbsp &nbsp &nbsp if all else fails, do this <br/>
+            } </p>
+            
+            <p>You can put as many else ifs as you want.</p>
+            
+            <p>Take a look at this very simple program here. Play around with it by entering in different numbers.</p>
+
+            <div class="program"><script src="//repl.it/embed/HCbD/0.js"></script></div>
+
+            <p>What this program does is compare your number to the number 3. If it is different,
+            then it will display the difference.</p>
+            
+            <p>Let's look at how we can compare numbers in C++:</p>
+            
+             <table id="operators">
+                <tr>
+                  <th colspan="2">Comparison Operators</th>
+                </tr>
+                <tr>    
+                    <td>&lt<br/> Less than</td>
+                    <td>&gt<br/> Greater than</td>
+                </tr>
+                <tr>
+                    <td>&lt= <br/> Less than or equal to</td>	
+                    <td>&gt= <br/> Greater than or equal to</td>
+                </tr>
+                <tr>
+                    <td>== <br/> Equal to</td>	
+                    <td>!= <br/> Not equal to</td>
+                </tr>
+            </table>
+            
+            <p>Now, if you want to check for more than one condition in an if statement,
+            you will need to use these logical operators: </p>
+            
+            <table id="operators">
+                <tr>
+                  <th colspan="3">Logical Operators</th>
+                </tr>
+                <tr>    
+                    <td>|| <br/> OR operator <br/> (at least one condition has to be true) </td>
+                    <td>&& <br/> AND operator <br/> (both conditions must be true)</td>
+                    <td>! <br/> NOT operator <br/> (will invert the truth value of certain statement)</td>
+                </tr>
+            </table>
+            
+            <p>Here is an example of all the OR operator in use:</p>
+
+            <div class="program"><script src="//repl.it/embed/HCbE/0.js"></script></div>
+
+            <p>Notice I couldn't have used the and operator because there is no way a number can be less
+            than 1 and greater than 10. </p>
+            
+            <p>Also, if you are having trouble finding || on your keyboard, it is right between the
+            backspace and the enter key on the right side of your keyboard. The bottom symbol is \
+            but if you hold shift you will get |. </p>
+            
+            <p>Here is the AND operator in use: </p>
+
+            <div class="program"><script src="//repl.it/embed/HCbF/0.js"></script></div>
+
+            <p>If you will notice, this program does the exact same thing as the one before it.
+            But look at the logic behind it. This one checks if the number is greater than 1 and less than 10,
+            then it will print the number you entered. Otherwise, it tells you that you have made a mistake.</p>
+            
+            <h2>Cases</h2>
+            
+            <p>Let us look at another kind of decision making tool: case structures.</p>
+            
+            <p>Case structures are useful when a variable can take one of several different values,
+            and you want to have something planned for each of them. Here is the basic structure of one.</p>
+
+            <p class="indent">switch(num) <br/>
+            { <br/>
+            &nbsp &nbsp &nbsp case 1: <br/>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp something to do <br/>
+            &nbsp &nbsp &nbsp break; <br/>
+            case 2: <br/>
+            &nbsp &nbsp &nbsp something to do <br/>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp break; <br/>
+            case 3: <br/>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp something to do <br/>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp break; <br/>
+            
+            default: <br/>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp something to do <br/>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp break; <br/>
+            } </p>
+
+            <p>The default will execute if the number does not meet any of the above criteria.
+            The breaks that you see are due to a peculiarity in how case statements work in C++.
+            Without the breaks, all the code below the case will get executed.</p>
+
+            <p>Case structures are often used for menus. Here is a menu for a virtual casino:</p>
+
+            <div class="program"><script src="//repl.it/embed/HCbL/0.js"></script></div>
+
+            <p>Try removing the breaks and see what happens.</p>
+            
+            <p>Case structures can also be used with characters. Here is an example:</p>
+
+            <div class="program"><script src="//repl.it/embed/HCbO/0.js"></script></div>
+
+            <p>Notice how I was able to cleverly omit break statements in order to account for
+            upper and lowercase letters. I wish I could say I thought of that myself, but I didn't. </p>
+            
+            <p>Now, it is finally time for some exercises!</p>
+            
+            <div id="1" class="tabcontent">
+                <h3>Exercise 1: Which one is larger?</h3>
+                
+                <p>The user will enter in two numbers. The program will tell the user which number 
+                they entered is larger.</p>
+            </div>
+            
+            <div id="2" class="tabcontent">
+                <h3>Exercise 2: Even or odd</h3>
+                
+                <p>The user will enter an integer. Tell them if it is even or odd. 
+                Use the modulus operator (%).</p>
+            </div>
+            
+            <div id="3" class="tabcontent">
+                <h3>Exercise 3: What is the letter grade?</h3>
+                
+                <p>The user will enter the percentage they got on the test. 
+                Tell them what letter grade they deserve. Use the 7 point scale:</p>
+                
+                <p class="indent">100 - 93: A <br/>
+                92 - 85: B <br/>
+                84 - 77: C <br/>
+                77 - 70: D <br/>
+                69 and below: F<p>
+            </div>
+            
+            <div id="4" class="tabcontent">
+                <h3>Exercise 4: F to C, and vice versa.</h3>
+            
+                <p>The user will enter in a temperature. Then the program will ask you if that temperature is 
+                in Fahrenheit or Celsius. The user will enter either an F or a C.
+                Give them the temperature in the other scale.</p>
+                
+                <p class="indent">F = (5/9) * C + 32 <br/>
+                C = (F - 32) * (9/5) </p>
+                
+                <p>You can easily figure out these formulas if you can remember the boiling points
+                in these two scales.</p>
+            </div>
+
+            <div class="tab">
+                <button class="tablinks" onclick="openExercise(event, '1')" id="defaultOpen">Exercise 1</button>
+                <button class="tablinks" onclick="openExercise(event, '2')">Exercise 2</button>
+                <button class="tablinks" onclick="openExercise(event, '3')">Exercise 3</button>
+                <button class="tablinks" onclick="openExercise(event, '4')">Exercise 4</button>
+            </div>
+            
+            <script src="tabs.js"></script>
+            
+            <div class="program"><script src="//repl.it/embed/GiUn/1.js"></script></div>
+            
+            <ul class="pager">
+              <li><a href="4.html">Previous Lesson</a></li>
+              <li><a href="6.html">Next Lesson</a></li>
+            </ul>
+        </div>
+        
+        
+        
+    </div>
+</body>
+
+</html> 

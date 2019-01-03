@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jeffrey Barlow's Learn to Program Website - Home</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+    <div id="page-wrap">
+        <div id="banner"><img src = "../images/banner.png"></img></div>
+        <div class="nav">
+            <table>
+                <tr>
+                    <th><a href="../index.html">Home</a></th>
+                    <th><a href="../lessons.html">Lessons</a></th>
+                    <th><a href="../projects.html">Projects</a></th>
+                    <th><a href="../about.html">About</a></th>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="content">
+            <h1>Lesson 4: Getting input from the user</h1>
+            
+            <p>But just printing stuff to the screen is boring. 
+            Let us instead try and get some information from the user,
+            that way our programs can actually do stuff.</p>
+
+            <p>Here is an example. This program will get a number from the user
+            and then tell you what that number squared is. Check it out: </p>
+            
+            <div class="program"><script src="//repl.it/embed/HCan/1.js"></script></div>
+
+            <p>The program returns exactly the answer it is supposed to.</p>
+
+            <p>Look carefully at the line after where it says "Give me a number".</p>
+
+            <p class="indent">cin >> num;</p>
+
+            <p>cin works the exact opposite from cout. Also notice how the arrows are pointing the other direction.
+            They are pointing towards the variable to signify that information is being loaded into them.
+            When you are writing your own programs, pay close attention to which way the arrows are pointing,
+            as this can cause a great deal many errors.</p>
+
+            <p>Let's look at all the different math operations available to you:</p>
+            
+            <table id="operators">
+                <tr>
+                  <th colspan="4">Math Operators</th>
+                </tr>
+                <tr>    
+                    <td>+ <br/> Addition</td>
+                    <td>- <br/> Subtraction</td>
+                    <td>* <br/> Multiplication</td>	
+                    <td>/ <br/> Division</td>
+                </tr>
+                <tr>
+                    <td>() <br/> Parentheses</td>	
+                    <td>% <br/> Modulus</td>
+                    <td>num++ <br/> Increment by one</td>
+                    <td>num-- <br/> Decrement by one</td>
+                </tr>
+                <tr>
+                    <td colspan="2">= <br/> Assignment operator</td>	
+                    <td colspan="2">pow(num, 2) <br/> Power function (you will need to #include &ltcmath&gt for this)</td>
+                </tr>
+            </table>
+            
+            <p>Some important things to mention:</p>
+
+            <p>You may remember from math class that parentheses can be used to signify multiplication.
+            Like 5(3) = 15. You can't do that in C++, you will get an error. Instead type 5 * 3.</p>
+            
+            <p>Use parentheses if you want to influence the order the operations will be evaluated in.
+            
+            <p class="indent">5 * 4 + 2 = 22</p>
+            
+            <p class="indent">5 * (4 + 2) = 30</p>
+            
+            <p>The modulus operator will return the remainder after you perform division with two integers. 
+            
+            <p class="indent">5 % 2 = 1. </p>
+            
+            <p>2 goes into 5 twice, and the remainder is 1. The modulus operator is a very useful tool,
+            and we will see why it is so important in future exercises.</p>
+            
+            <p>A problem may occur when you divide two integers. For example, run the program below and 
+            see what happens.</p>
+
+            <div class="program"><script src="//repl.it/embed/HCav/0.js"></script></div>
+
+            <p>You might be thinking that 5 / 2 will give you 2.5, but instead you get 2.
+            Why is that? Well, when you divide two integers, the compiler will assume you are doing integer division,
+            which means no decimal parts in the answer. 2 goes into 5 twice. So 2 is the answer we get.</p>
+            
+            <p>How do we fix this, run the program below and find out:</p>
+
+            <div class="program"><script src="//repl.it/embed/HCax/0.js"></script></div>
+
+            <p>This will force the compiler to treat your numbers a floating point numbers, which have decimals.</p>
+            
+            <p>One last thing to mention: The equals sign is for assigning new values to your variables.
+            You can even use this to update the value of your number based off its previous value:</p>
+            
+        	<p class="indent">int num = 5; <br/>
+        	num = num + 1; <br/>
+        	//now the number is 6</p>
+            
+            <p>num = num + 1 may seem like a mathematical absurdity, but remember that the equal sign
+            is used for assigning values, not necessarily what it means in math class.</p>
+            
+            <p>Another way to write this is:</p>
+            
+            <p class="indent">num += 1;</p>
+            
+            <p>This does the same thing as above, but now there is no mathematical absurdity.</p>
+            
+            <p>Check out this program. Try and figure out the result:</p>
+
+            <div class="program"><script src="//repl.it/embed/HCay/0.js"></script></div>
+
+            <p>That is some crazy use of the different math operators available to you.</p>
+            
+            <p>Now, let us dive into some exercises.</p>
+            
+            <div id="1" class="tabcontent">
+                <h3>Exercise 1: Area of a rectangle</h3>
+                
+                <p>Write a program that will ask the user for the length and width of a rectangle.
+                The program will then multiply the two numbers and show the area of the rectangle.</p>
+            </div>
+            
+            <div id="2" class="tabcontent">
+                <h3>Exercise 2: Area of a circle</h3>
+                
+                <p>Write a program that will ask the user for the radius of a circle. Then, 
+                show the user the area of the circle by doing radius times radius times PI.</p>
+                
+                <p>*make sure you make the value PI a constant.</p> 
+                <p class="indent">const float PI = 3.14;</p>
+            </div>
+                
+            <div id="3" class="tabcontent">
+                <h3>Exercise 3: Swapping two values</h3>
+                
+                <p>Write a program that will ask the user for two integers, the program will store these as
+                num1 and num2. Then the program will swap the values of num1 and num2, and then print these
+                to the screen.</p>
+            
+                <p>Hint: If you just do </p>
+                
+            	<p class="indent">num1 = num2; <br/>
+            	num2 = num1;</p>
+                
+                <p>Then both numbers will be the same. You need to create a third variable, num3, to help
+                in the switching.</p>
+            </div>
+                
+            <div id="4" class="tabcontent">
+                <h3>Exercise 4: Finding the average</h3>
+                
+                <p>Write a program that will ask the user for three numbers. 
+                These numbers will be added up and divided by three, which will give you the average. 
+                Use your parentheses wisely, and be careful with your division. 
+                We want our answer to allow for decimals.</p>
+            </div>
+            
+            <div id="5" class="tabcontent">
+                <h3>Exercise 5: Converting temperatures</h3>
+                
+                <p>Write a program that will ask the user for a temperature in Celsius.
+                Then convert that temperature to Fahrenheit. If you don't remember, 
+                the formula is multiply the temperature by 1.8, and then add 32.</p>
+            </div>
+            
+            <div id="6" class="tabcontent">
+                <h3>Exercise 6: Total cost after tax</h3>
+                
+                <p>Write a program that will ask the user for the cost of an item.
+                Then figure out the total cost after sales tax is added. 
+                Assume a tax rate of 7.5%. Store the tax rate as a constant.</p>
+                
+                <p> Hint: You will be multiplying the cost by (1 + 0.075)</p>
+                
+                <p>Whew, that's a lot of exercises. If you could make it through all that,
+                then you are in good shape to move on to the next section!</p>
+            </div>
+                                   
+            <div class="tab">
+                <button class="tablinks" onclick="openExercise(event, '1')" id="defaultOpen">Exercise 1</button>
+                <button class="tablinks" onclick="openExercise(event, '2')">Exercise 2</button>
+                <button class="tablinks" onclick="openExercise(event, '3')">Exercise 3</button>
+                <button class="tablinks" onclick="openExercise(event, '4')">Exercise 4</button>
+                <button class="tablinks" onclick="openExercise(event, '5')">Exercise 5</button>
+                <button class="tablinks" onclick="openExercise(event, '6')">Exercise 6</button>
+            </div>
+            
+            <script src="tabs.js"></script>
+            
+            <div class="program"><script src="//repl.it/embed/GiUn/1.js"></script></div>
+
+            <ul class="pager">
+              <li><a href="3.html">Previous Lesson</a></li>
+              <li><a href="5.html">Next Lesson</a></li>
+            </ul>
+        </div>
+        
+        
+        
+    </div>
+</body>
+
+</html> 

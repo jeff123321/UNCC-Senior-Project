@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jeffrey Barlow's Learn to Program Website - Home</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+    <div id="page-wrap">
+        <div id="banner"><img src = "../images/banner.png"></img></div>
+        <div class="nav">
+            <table>
+                <tr>
+                    <th><a href="../index.html">Home</a></th>
+                    <th><a href="../lessons.html">Lessons</a></th>
+                    <th><a href="../projects.html">Projects</a></th>
+                    <th><a href="../about.html">About</a></th>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="content">
+            <h1>Lesson 3: Variables</h1>
+            
+            <p>Now that we have printed a message to the screen, let's lay the groundwork for much more 
+            interesting programs. Variables are like containers for holding information. 
+            C++ allows you to use different kinds of containers to hold different kinds of data. 
+            Here is a list of the different kinds of containers, or variables, you can use.<p>
+
+            <p>1. Integers - Remember from math class that an integer is a number with no decimal point. 
+            It can be positive or negative. To create an integer, type this: </p>
+
+	        <p class="indent">int myInteger = 5;</p>
+
+            <p>The first word int, is what lets you create the integer. Following int is the name of the integer,
+            so that you can refer to this number later on. Next there is an equal sign followed by the number 5.
+            Of course, a semicolon goes at the end. </p>
+
+            <p>To change the value of myInteger. You can simply write out:</p>
+
+            <p class="indent">myInteger = 10;</p>
+
+            <p>Now myInteger is equal to 10.</p>
+
+            <p>2. Floating point numbers - These can be positive or negative, but it can also have a decimal. 
+            Here is an example:</p>
+
+	        <p class="indent">float myFloater - 10.789;</p>
+
+            <p>3. Double precision floating point numbers - Much like a float, 
+            except these allow for more numbers after the decimal point. </p>
+
+	        <p class="indent">double myDouble = 8.7888888999944445;</p>
+
+            <p>4. Characters - A character can be a single letter, it can be punctuation, 
+            or it can even be a newline character '\n', or a null character '\0' </p>
+
+	        <p class="indent">char letterOfTheDay = 'C';</p>
+
+            <p>Notice that the letter is surrounded by single quotes. 
+            You have to use single quotes with characters.</p>
+
+            <p>5. Strings - A string is a bunch of characters all strung together. 
+            You can use these to hold words, sentences, or even whole novels.</p>
+
+            <p class="indent">string monologue = "Now is the winter of our discontent 
+            made glorious summer by this sun of York";</p>
+
+            <p>Strings have to be enclosed in double quotes, presumably because they are more special 
+            than simple characters. But that is not all, in order to use strings at all in our program 
+            we need to put this at the top: </p>
+
+            <p class="indent">#include &ltcstring&gt </p>
+
+            <p>This will go right after our other include statement. </p>
+
+            <p>6. Boolean - A variable of type boolean can hold one of two possible values, true or false.</p>
+
+        	<p class="indent">bool likesChocolateMilk = true;</p>
+
+            <p>These will be very useful when we get into decision making.</p>
+
+            <p>*George Boole was an English mathematician who developed a system of algebraic logic 
+            which would later form the basis for modern computing. His name is used in many different programming 
+            languages for holding true or false values.</p>
+
+            <p>One last thing I want to mention. Sometimes, it is a good idea to make a variable constant. 
+            By constant I mean that it you will not be able to change after you have created it. Here is an example:</p>
+
+	        <p class="indent">const float PI = 3.14;</p>
+
+            <p>PI is a mathematical constant, so we would never expect it to change. 
+            By making it constant, we eliminate the possibility of someone messing it up by accident. 
+            Generally, constants will be written out in capital letters so that we know they are constants. </p>
+
+	        <p class="indent">const float SALES_TAX_RATE = 0.075; </p>
+
+            <p>But enough talk, why don't you try playing around with this on your own? 
+            Create some of your own variables, and then print them to the screen! 
+            See if you can do math with them. </p>
+
+            <p>Here is an example: </p>
+            
+            <div class="program"><script src="//repl.it/embed/GhEW/2.js"></script></div>
+            
+            <ul class="pager">
+              <li><a href="2.html">Previous Lesson</a></li>
+              <li><a href="4.html">Next Lesson</a></li>
+            </ul>
+        </div>
+        
+        
+        
+    </div>
+</body>
+
+</html> 

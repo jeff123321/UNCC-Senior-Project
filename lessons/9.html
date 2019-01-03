@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jeffrey Barlow's Learn to Program Website - Home</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+    <div id="page-wrap">
+        <div id="banner"><img src = "../images/banner.png"></img></div>
+        <div class="nav">
+            <table>
+                <tr>
+                    <th><a href="../index.html">Home</a></th>
+                    <th><a href="../lessons.html">Lessons</a></th>
+                    <th><a href="../projects.html">Projects</a></th>
+                    <th><a href="../about.html">About</a></th>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="content">
+            <h1>Lesson 9: Advanced Topics</h1>
+            
+            <p>This is where I am going to mention things that I didn't get around to. I am also
+            going to introduce some more advanced topics and point you in a direction so that you 
+            can learn more about them. </p>
+
+            <h2>Formatting output</h2>
+
+            <p>You will need to #include &ltiomanip&gt to format your output. </p>
+            
+            <p>Some useful features that you can use include setting the width of a field, aligning text,
+            and setting the number of decimal places after a floating point number. </p>
+            
+            <p>Here is the sales tax program from before, except now I have changed it so that dollar 
+            values will be shown to two decimal places: </p>
+
+            <div class="program"><script src="//repl.it/embed/HCbr/1.js"></script></div>
+
+            <p>Normally, the setprecision function shows a value to a given number of significant figures. 
+            However, by placing the line cout << fixed in the code, the setprecision function will instead
+            show each number to the given number of decimal places. </p>
+            
+            <p>Another thing we can do is set the width of a particular section of output. 
+            This involves using the setw function. </p>
+            
+            <p>Here is an example: </p>
+
+            <div class="program"><script src="//repl.it/embed/HCbs/0.js"></script></div>
+
+            <p>The setw will set how the minimum width of a field. It goes before the text that you want to
+            set the width for. The width also includes the number of characters in the text itself. If the word 
+            is too long to fit in the width, the text will overflow into the next field. </p>
+            
+            <p>By default the text is right aligned in the field. We can change it to left if we want to. 
+            We can also use setfill to change the character that we fill the field with. </p>
+
+            <div class="program"><script src="//repl.it/embed/HCbw/0.js"></script></div>
+
+            <p>The setfill and the alignment you can set once if you want to, but the setw will have
+            to be put before everything you output. </p>
+
+            <h2>Pointers</h2>
+
+            <p>Pointers are a pretty cool feature of C++. Other languages try to hide pointers from you,
+            but C++ is all about them. </p>
+
+            <p>A pointer is a special kind of variable that instead of storing a value like 5 or "Johnny"
+            stores the address of another variable. </p>
+
+            <p>Here is an example: </p>
+
+            <div class="program"><script src="//repl.it/embed/HCbz/1.js"></script></div>
+
+            <p>This is how I can create the pointer. </p>
+            
+            <p class="indent">int * addressOfNum; </p>
+            
+            <p>The int* means that the pointer will hold the address of an integer variable. </p>
+            
+            <p>To put an address in my pointer, I can do this:</p>
+            
+            <p class="indent">int * addressOfNum = &num; </p>
+            
+            <p>The ampersand means that I am referring to the address of the variable called num.
+            This is how I set the pointer to point to the address of the variable num. </p>
+            
+            <p>If you notice, when I printed the pointer to the screen we got something that looked like 0x
+            followed by letters and numbers. This is how addresses look like in computers. The letters and
+            numbers are actually in hexadecimal, which is kind of number system based around the number 16. </p>
+            
+            <p>To print the value pointed to by the pointer, we use the dereference operator:</p>
+            
+            <p class="indent">*addressOfNum;</p>
+            
+            <p>The way I think of it is like that the asterisk is basically telling the pointer to spill
+            its guts out. So instead of getting a hexadecimal address, we get the value of num. </p>
+            
+            <p>Arrays are very closely related to the idea of pointers, since elements in an array are
+            supposed to be right next to each other in memory. </p>
+
+            <div class="program"><script src="//repl.it/embed/HCcB/0.js"></script></div>
+
+            <p>There are some cool things you can do with pointers. Sometimes it is faster to work
+            with addresses of information rather than the data itself. </p>
+
+            <h2>Structures</h2>
+
+            <p>Structures are used to group data under one label. Structures are created outside of your main.
+            Here is an example so you can see the structure: </p>
+
+            <p class="indent">struct cat <br/>
+            { <br/>
+            &nbsp &nbsp &nbsp string name; <br/>
+            &nbsp &nbsp &nbsp float weight; <br/>
+            &nbsp &nbsp &nbsp string color; <br/>
+            &nbsp &nbsp &nbsp int age; <br/>
+            }; </p>
+            
+            <p>Cat is the name of the structure. Name, weight, color, and age are the members of the structure.</p>
+            
+            <p>Here is a program the puts the structure to use:</p>
+
+            <div class="program"><script src="//repl.it/embed/HCcD/0.js"></script></div>
+            
+            <p>First, I had to create an instance of the cat structure.</p>
+            
+            <p class="indent">cat myCat;</p>
+            
+            <p>This works a lot like how we have been creating variables up to now, where we say 
+            int num or whatever. Except instead of creating an integer named num, we are creating
+            a cat data structure named myCat. </p>
+            
+            <p class="indent">myCat.name = "Paul"; <br/>
+            myCat.weight = 20; <br/>
+            myCat.color = "orange"; <br/>
+            myCat.age = 15; </p>
+            
+            <p>You can access the member variables of your structure by typing the name of the
+            structure you created, followed by a dot, and then the name of the member variable 
+            that you want to access. These member variables can be treated just like any of the
+            other variables you have been creating up until this point. </p>
+            
+            <p>There are other ways to create structures.</p>
+            
+            <p class="indent">struct cat <br/>
+            { <br/>
+            &nbsp &nbsp &nbsp float weight; <br/>
+            &nbsp &nbsp &nbsp string color; <br/>
+            &nbsp &nbsp &nbsp int age; <br/>
+            }Paul, Tom, Penelope; </p>
+            
+            <p>This is similar to what we have above, except this time the names of our cats have
+            been included next to the structure definition. This means we do not have to create
+            instances of our cat data structure, they already created. Here is a program using this: </p>
+
+            <div class="program"><script src="//repl.it/embed/HCcF/0.js"></script></div>
+
+            <p>Then I had to set the member variables equal to the appropriate values.</p>
+            
+            <p>Another cool thing you can do with structures is combine them with arrays. This allows you
+            to use structures as a handy database tool. </p>
+
+            <div class="program"><script src="//repl.it/embed/HCcG/0.js"></script></div>
+
+            <h2>Classes</h2>
+            
+            <p>Now we are starting to get more into object oriented type stuff, which is beyond what I
+            had originally planned for with this site. However, a light introduction should be okay. 
+            Just keep in mind that there is a lot more to learn about with this stuff than what I am 
+            going to put here.</p>
+            
+            <p>Classes are like structures, except instead of just holding data they can also have functions.</p>
+            
+            <p>Here is an example of a class circle:</p>
+            
+            <p class="indent">class circle <br/>
+            { <br/>
+            &nbsp &nbsp &nbsp float radius; <br/> <br/>
+            
+            &nbsp &nbsp &nbsp public: <br/>
+            &nbsp &nbsp &nbsp void setRadius(float r) <br/>
+            &nbsp &nbsp &nbsp { <br/>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp radius = r; <br/>
+            &nbsp &nbsp &nbsp } <br/>
+            &nbsp &nbsp &nbsp float getRadius() <br/>
+            &nbsp &nbsp &nbsp { <br/>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp return radius; <br/>
+            &nbsp &nbsp &nbsp } <br/>
+            &nbsp &nbsp &nbsp float circumference() <br/>
+            &nbsp &nbsp &nbsp { <br/>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  return 2 * radius * PI; <br/>
+            &nbsp &nbsp &nbsp } <br/>
+            &nbsp &nbsp &nbsp float area() <br/>
+            &nbsp &nbsp &nbsp { <br/>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  return radius * radius * PI; <br/>
+            &nbsp &nbsp &nbsp } <br/>
+            &nbsp &nbsp &nbsp float diameter() <br/>
+            &nbsp &nbsp &nbsp { <br/>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  return radius * 2; <br/>
+            &nbsp &nbsp &nbsp } <br/>
+            }; </p>
+            
+            <p>The class circle has a member variable named radius for holding the radius of a circle,
+            but there are also functions for calculating the diameter, the circumference, and the area. 
+            The public: before the functions just makes it so that we can access these functions outside
+            of the class.</p>
+            
+            <p>Here is a program that puts our circle class to use:</p>
+
+            <div class="program"><script src="//repl.it/embed/HCcJ/0.js"></script></div>
+
+            <p>If you notice, in main we had to create instances of our circle class called myCircle and yourCircle.</p>
+            
+            <p class="indent">circle myCircle; <br/>
+            circle yourCircle; </p>
+            
+            <p>This is just like creating integers named num1 and num2, except here we are creating circle
+            objects and calling them myCircle and yourCircle.</p>
+            
+            <p>The rest of the main is us calling the various functions belonging to our circle objects.</p>
+            
+            <p class="indent">myCircle.setRadius(10) <br/>
+            myCircle.getRadius() <br/>
+            myCircle.diameter() <br/>
+            myCircle.circumference() <br/>
+            myCircle.area()</p>
+            
+            <p>These are accessed by putting the name of the object, a dot, and the name of the function we want to use.</p>
+            
+            <p>This was a really quick intro to object oriented programming. If you want to learn more, 
+            I recommend heading over to</p>
+            
+            <p><a href="http://www.cplusplus.com/doc/tutorial/classes/">http://www.cplusplus.com/doc/tutorial/classes/</a></p>
+
+            <ul class="pager">
+              <li><a href="8.html">Previous Lesson</a></li>
+            </ul>
+        </div>
+        
+        
+        
+    </div>
+</body>
+
+</html> 

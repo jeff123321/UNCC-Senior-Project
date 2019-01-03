@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jeffrey Barlow's Learn to Program Website - Home</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+    <div id="page-wrap">
+        <div id="banner"><img src = "../images/banner.png"></img></div>
+        <div class="nav">
+            <table>
+                <tr>
+                    <th><a href="../index.html">Home</a></th>
+                    <th><a href="../lessons.html">Lessons</a></th>
+                    <th><a href="../projects.html">Projects</a></th>
+                    <th><a href="../about.html">About</a></th>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="content">
+            <h1>Lesson 8: Functions</h1>
+            
+            <p>Functions are a useful way to clean up your code and reduce how much typing you have to do.
+            Functions go before main, but after all the #include and using namespace std statements. </p>
+
+            <p>Here is an example of a function. </p>
+
+            <div class="program"><script src="//repl.it/embed/HCbd/0.js"></script></div>
+
+            <p>The function is named sayHello. It takes a string for a name, and then it prints hello 
+            to the screen along with the name. In my main, I create a string name, and then I pass the
+            name to the function, and the function does what it does with my name. </p>
+            
+           <p>Let's look at the function more carefully. </p>
+            
+            <p class="indent">void sayHello(string name) <br/>
+            { <br/>
+            &nbsp &nbsp &nbsp cout << "Hello " << name << "!"; <br/>
+            } </p>
+            
+            <p>void means that the function does not return any values. sayHello is the name of the function.
+            In parenthesis are the arguments it will take. Inside the curly braces is the function body, 
+            which is what gets executed when the function is called. </p>
+            
+            <p>Let's look at another example: </p>
+
+            <div class="program"><script src="//repl.it/embed/HCbe/0.js"></script></div>
+
+            <p>This function will give you a random number between 1 and 6, just like a die would.
+            Instead of having to write out rand() % 6 + 1 over and over again, you can just call
+            your rollDice() function. </p>
+            
+            <p>Let's look at the function more closely. </p>
+            
+            <p class="indent">int rollDice() <br/>
+            { <br/>
+            &nbsp &nbsp &nbsp //generates a random number between 1 and 6 <br/>
+            &nbsp &nbsp &nbsp return rand() % 6 + 1; <br/>
+            }</p>
+            
+            <p>This function returns an integer, that's what the int up front means. 
+            rollDice is the name of the function. In parentheses are the arguments that the function will take.
+            This function takes no arguments, so there is nothing in the parentheses. </p>
+            
+            <p>So let's summarize the process of writing a function: </p>
+            
+            <p class="indent">1. First put the data type of the result of the function. This can be an integer, 
+            a boolean, a string, a double, a character, or anything you want. If you don't want to return anything,
+            you just put void.</p>
+            
+            <p class="indent">2. After the data type, you will put the name of the function. </p>
+            
+            <p class="indent">3. In parentheses, put the arguments that your function will take. If there are no arguments
+            you want to take, just leave the parentheses empty. </p>
+            
+            <p class="indent">4. Then write the code for the function in curly braces {}. </p>
+            
+            <h2>Scope</h2>
+            
+            <p>Remember, when we were talking about scope in the section on loops. A variable that you
+            create in your main will not be accessible to your functions. If you want a variable to be 
+            accessible to your functions, you will have to pass it as an argument, or you can do something else,
+            which I will show you now in this example: </p>
+
+            <div class="program"><script src="//repl.it/embed/HCbi/0.js"></script></div>
+
+            <p>Look below the using namespace std line, you can see that I created a constant variable called
+            SALES_TAX_RATE. Because I created this variable outside of all the functions, the variable is
+            accessible by all of the functions. This is called a globally defined variable because you can
+            access it from anywhere. </p>
+            
+            <p>In general, it is not a good idea to use too many global variables. If you have a bunch of 
+            functions in your code, it can be quite challenging figuring out what exactly is happening to your
+            variables. Basically, things can get out of hand quickly. However, making a constant a global variable
+            is perfectly acceptable since nothing can change it anyway. SALES_TAX_RATE is a constant,
+            so I made it global.</p>
+            
+            <h2>Call by reference</h2>
+            
+            <p>What if we want a function to change the value of the variables we pass to it?
+            Here is an example of a program that does just that: </p>
+
+            <div class="program"><script src="//repl.it/embed/HCbl/0.js"></script></div>
+
+            <p>What the function does is takes in a number, and then cubes it, changing the value of the variable
+            you passed to it. Look at the function again: </p>
+            
+            <p class="indent">void cube(int& num) <br/>
+            { <br/>
+            &nbsp &nbsp &nbsp num = num * num * num; <br/>
+            } </p>
+            
+            <p>The function is void because it isn't returning anything. Instead of having int num as an argument,
+            it says int& num. This means that you are passing to the function the address of the variable,
+            so that the function can actually make changes to it. Before, we had just been sending copies
+            of our variables to our functions. </p>
+            
+            <h2>Passing arrays to functions</h2>
+            
+            <p>We can also pass arrays to functions. Here's how: </p>
+
+            <div class="program"><script src="//repl.it/embed/HCbn/0.js"></script></div>
+
+            <p>The program creates an array with 10 elements. Then it calls a function to print the array.
+            Then it calls another function to clear out the array and make everything 0.
+            Then it prints the array again. </p>
+            
+            <p>This should help you to understand the utility of functions. We just eliminated a lot
+            of repetitive code, and really cleaned up our main. </p>
+            
+            <p>Let's look at the heading for the clearArray function: </p>
+            
+            <p class="indent">void clearOut(int arr[], int length) </p>
+            
+            <p>To pass the array, all we had to do was put square brackets after the name of the array.
+            Note the name does not have to be the same as the array you passed to it. To make things easier,
+            I also decided to take the length of the array of another argument. Other programming languages
+            provide easy ways for you to get the length of an array, but not C++. </p>
+            
+            <p>Also note that anytime you pass an array to a function, you are passing the array by reference, 
+            meaning that the array will not be copied over to the function. Instead you will be passing the 
+            address of the array, which means that you can change the contents of the array with your function.
+            The reason for this is that for very large arrays, copying the contents would take a very long time. </p>
+            
+            <h2>How to put functions after main</h2>
+            
+            <p>I mentioned earlier that main itself is a function. It returns an integer, and it takes no arguments.
+            However, main is special since it is where the main execution of a program will take place. 
+            Ordinarily, main has to go at the end, after all of the functions you have written. </p>
+            
+            <p>However, you may want to have your functions go after main. The process of doing is kind of annoying.
+            But here's how you do it: </p>
+
+            <div class="program"><script src="//repl.it/embed/HCbp/0.js"></script></div>
+
+            <p>The sayHello function is below the main, as we wanted. But look at the top here. 
+            You will see a line that looks like this: </p>
+            
+            <p class="indent">void sayHello(string); </p>
+            
+            <p>This is called a function prototype. It looks a lot like the function header for sayHello,
+            but there are some differences. You do not need to name the variables that the function takes
+            as arguments in your function prototype. Also, there is a semicolon at the end. </p>
+            
+            <p>For further examples, here all function prototypes for all the functions we have done in this section: </p>
+            
+            <p class="indent">int rollDice(); <br/>
+            float totalCost(float); <br/>
+            void cube(int&); <br/>
+            void clearOut(int arr[], int); <br/>
+            void printArray(int arr[], int); </p>
+            
+            <p>There are some things to note here. If you are passing a variable by reference,
+            you will need to put an ampersand in your function prototype. If you are passing an array,
+            you will need to name the array and then put the square brackets after the name of the array. </p>
+            
+            <p>Now, on to some exercises! </p>
+            
+            <div id="1" class="tabcontent">
+                <h3>Exercise 1: Area of a circle</h3>
+                
+                <p>Write a function that will take in the radius of a circle and return the area. 
+                Write your main so that it will receive user input. </p>
+            </div>
+            
+            <div id="2" class="tabcontent">
+                <h3>Exercise 2: Area of a rectangle </h3>
+                
+                <p>Write a function that will take in the length and width of a rectangle and return the area. 
+                Write your main so that it will receive user input. </p>
+            </div>
+            
+            <div id="3" class="tabcontent">
+                <h3>Exercise 3: Swapping two values </h3>
+                
+                <p>Write a function that will take in the swap the values of two variables. 
+                Make sure you are calling by reference. Write your main so that it will receive user input. </p>
+            </div>
+            
+            <div id="4" class="tabcontent">
+                <h3>Exercise 4: Is this value in the array? </h3>
+                
+                <p>Write a function that when given an array and a value, will tell you if that value is in the array.
+                The function will return either true or false. </p>
+                
+                <p>Use this as your test array { 1, 2, 3, 5, 8, 4, 3, 67, 1006, 321 }. </p>
+                
+                <p>Write your main so that it will receive a user value. Print the result of the search. </p>
+                
+                <p>Hint: use a for loop to search the array </p>
+            </div>
+            
+            <div id="5" class="tabcontent">
+                <h3>Exercise 5: Find the max </h3>
+                
+                <p>Write function that will find the largest element in an array. In main, print the max. </p>
+                
+                <p>Use this as your test array { 1, 2, 3, 5, 8, 4, 3, 67, 1006, 321 }. </p>
+            </div>
+            
+            <div id="6" class="tabcontent">
+                <h3>Exercise 6: Reversi </h3>
+                
+                <p>Write a function that will reverse the contents of an array. In main, print the 
+                reversed array. </p>
+                
+                <p>Use this as your test array { 1, 2, 3, 5, 8, 4, 3, 67, 1006, 321 }. </p>
+                
+                <p>Hint: There are different ways you can do this. What I would do is create an array the
+                same size as the one you are reversing, then use a backwards for loop, putting the elements
+                of one array into the other. Then you can transfer the contents of the copy array over to the
+                original (use a for loop for this). </p>
+            </div>
+            
+            <div id="7" class="tabcontent">
+                <h3>Exercise 7: Bubble sort </h3>
+                
+                <p>You will need your swapping function from before. </p>
+                
+                <p>Write a function called bubble sort that takes in an array and the length of the array.
+                The function will sort the contents of the array from least to greatest. </p>
+                
+                <p>Here is your test array: {90, 32, 7, 69, 5, 81, 35, 29, 76, 14, 25, 67, 41,
+                19, 48, 62, 36, 44, 13, 10} </p>
+                <p>There are 20 elements.</p>
+                
+                <p>This function will use an algorithm called bubble sort. Here is a summary of how it works. </p>
+                
+                <p>The function will scan through the array. If one element in the array is greater than the 
+                one after wards, the two numbers are swapped. The function will continually scan through the
+                array until know swaps have occurred, in which case the array will be sorted. </p>
+                
+                <p>Hint: Use a for loop to scan the array. Use a boolean variable to indicate that a switch
+                has occurred. Reset this boolean to false every time you loop through the array. </p>
+                 
+                <p class="indent">if(arr[i] > arr[i] + 1) <br/>
+                { <br/>
+                	&nbsp &nbsp &nbsp swap(arr[i], arr[i + 1); <br/>
+                	&nbsp &nbsp &nbsp swapped = true; <br/>
+                } </p>
+                
+                <p>Great work! Next section will be on advanced topics. There won't be any exercises,
+                but if you head on over to the Projects section of the website, you can see some programming
+                projects that will put all of your skills to the test! </p>
+            </div>
+            
+            <div class="tab">
+                <button class="tablinks" onclick="openExercise(event, '1')" id="defaultOpen">Exercise 1</button>
+                <button class="tablinks" onclick="openExercise(event, '2')">Exercise 2</button>
+                <button class="tablinks" onclick="openExercise(event, '3')">Exercise 3</button>
+                <button class="tablinks" onclick="openExercise(event, '4')">Exercise 4</button>
+                <button class="tablinks" onclick="openExercise(event, '5')">Exercise 5</button>
+                <button class="tablinks" onclick="openExercise(event, '6')">Exercise 6</button>
+                <button class="tablinks" onclick="openExercise(event, '7')">Exercise 7</button>
+            </div>
+            
+            <script src="tabs.js"></script>
+
+            <div class="program"><script src="//repl.it/embed/GiUn/1.js"></script></div>
+            
+            <ul class="pager">
+              <li><a href="7.html">Previous Lesson</a></li>
+              <li><a href="9.html">Next Lesson</a></li>
+            </ul>
+        </div>
+        
+        
+        
+    </div>
+</body>
+
+</html> 

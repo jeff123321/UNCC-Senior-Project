@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jeffrey Barlow's Learn to Program Website - Home</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+    <div id="page-wrap">
+        <div id="banner"><img src = "../images/banner.png"></img></div>
+        <div class="nav">
+            <table>
+                <tr>
+                    <th><a href="../index.html">Home</a></th>
+                    <th><a href="../lessons.html">Lessons</a></th>
+                    <th><a href="../projects.html">Projects</a></th>
+                    <th><a href="../about.html">About</a></th>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="content">
+            <h1>Lesson 2: "Hello World"</h1>
+            
+                <p>Programmers are sticklers for tradition. 
+                So, when introducing a new programming language, 
+                it is customary to begin by showing a little program which simply prints 
+               "Hello world" to the screen.</p>
+                
+                <p>Have a looksee at the code below you. Click the run button next to
+                the little panel below to see what it does.</p>
+                
+                
+                <div class="program"><script src="//repl.it/embed/HCaf/0.js"></script></div>
+                
+                <p>Try experimenting with changing things around, see what happens.
+                You might get a few errors, but that's okay.
+                Learn what works and what doesn't. 
+                Particularly see if you can print other things to the screen besides "hello world".</p>
+                
+                <p>The following image will break down for you what everything does.</p>
+                
+                <img src="../images/helloworld.png"  alt="Hello world!">
+                
+                <p>Now is the time I give you some guidelines on basic formatting in C++.
+                One thing that you will very quickly find out is that C++ is very picky
+                about making sure that everything is formatted correctly. Simply misplacing
+                a piece of punctuation might make it so that the program will not work. 
+                Here are some rules: </p>
+                
+                <p class="indent">1. Every time you use an opening brace { there must also be a closing brace }. </p>
+                
+                <p class="indent">2. The same rule applies to parentheses. ( )</p>
+                
+                <p class="indent">3. Almost every statement you write must have a semicolon at the end. 
+                This is one of the weird things about C++, since not all languages require you to do this. 
+                You will notice from the program above that "#include &ltiostream&gt" and "int main()" do not end with semicolons. 
+                The reason for that is simple: they are just exceptions.</p>
+                
+                <p class="indent">4. Anything you write after two forward slashes will be ignored by the compiler.
+                Here is an example:</p>
+                
+                <p class="doubleindent">//ergerjhfigheiogheioghiohgiohg</p>
+                
+                <p class="indent">5. When writing cout statements, you just have to follow the format. </p>
+                
+                <p class="doubleindent">cout << "Your text here";</p>
+                
+                <p>You can put comments in your code and it will not affect the output. 
+                The two slashes indicate that you are about to write a comment. 
+                Comments are used to provide explanations for what the code does and how it works. 
+                These are very important especially when other people need to read your code. 
+                Here it is in action.</p>
+                
+                <div class="program"><script src="//repl.it/embed/HCak/0.js"></script></div>
+                
+                <p>If you want to move to the next line after printing something, try this:</p>
+                
+                <p class="indent">cout << "This is the first line." << endl;</p>
+                <p class="indent">cout <<"This is the second line.";</p>
+                
+                <p>The endl is short for end line, hopefully that is not too confusing. 
+                Without it, both of those statements would show up on the same line. 
+                Another way to move to the next line is with the newline character '\n'.</p>
+                
+                <p class="indent">cout << "This is the first line.\n";</p>
+                <p class="indent">cout <<"This is the second line.";</p>
+                
+                <p>This requires less typing which you may prefer.</p>
+                
+                <p>We will go into making your output prettier in later lessons.</p>
+
+            <ul class="pager">
+              <li><a href="1.html">Previous Lesson</a></li>
+              <li><a href="3.html">Next Lesson</a></li>
+            </ul>
+        </div>
+        
+        
+        
+    </div>
+</body>
+
+</html> 
