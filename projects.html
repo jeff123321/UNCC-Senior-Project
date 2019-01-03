@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Jeffrey Barlow's Learn to Program Website - Home</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="page-wrap">
+        <div id="banner"><img src = "images/banner.png"></img></div>
+        <div class="nav">
+            <table>
+                <tr>
+                    <th><a href="index.html">Home</a></li>
+                    <th><a href="lessons.html">Lessons</a></li>
+                    <th><a href="projects.html">Projects</a></li>
+                    <th><a href="about.html">About</a></li>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="content">
+            <h1>Additional programming projects</h1>
+            
+            <p>To do these projects, you will probably want to move on to a more advanced IDE (integrated development
+            environment). Codeblocks is a good free IDE which you can <a href="http://www.codeblocks.org">download here</a><p>
+            
+            <p>If you don't want to download anything, you can go to <a href="http://www.repl.it">repl.it</a> which has an online
+            IDE for C++. You can also use <a href="http://www.c9.io">c9.io</a>, although they will ask for your credit card.</p>
+            
+            <h2>Banking app</h2>
+            
+            <p>Create an app for a virtual bank. The app will first show you a menu like so:</p>
+            
+            <ol>
+                <li>Sign in</li>
+                <li>Create Account</li>
+                <li>Exit</li>
+            </ol>
+            
+            <p>If the user enters in a number other than the ones that are on the menu, you can either show the menu again,
+            or you can use the alarm character '\a' and say try again.</p>
+            
+            <p>When the user has logged in, they will see another menu like so:</p>
+            
+            <ol>
+                <li>Withdraw</li>
+                <li>Make a deposit</li>
+                <li>View balance</li>
+                <li>Sign out</li>
+            </ol>
+            
+            <p>When the user chooses withdraw they will be asked to enter in how much money they want to take out, and the amount
+            will be subtracted from their balance. Then they will be sent back to the previous menu. The rest of the options should
+            be self explanatory.</p>
+
+            <p>Remember, use functions whenever you can like viewBalance() or withdraw(float amount) or something. 
+            Don't try to do everything in main.</p>
+            
+            <p>For added challenge, see if you can make the information persist even after the program has exited.
+            To do this, you will need to write the information to a text file. You can 
+            <a href="http://www.cplusplus.com/doc/tutorial/files/">read about how to that here</a>.</p>
+            
+            <h2>Virtual Casino</h2>
+            
+            <p>Create the casino program mentioned in the lessons. The program will have a menu like this: </p>
+            
+            <ol>
+                <li>Baccarat</li>
+                <li>Blackjack </li>
+                <li>Craps </li>
+                <li>Roulettes</li>
+                <li>Slots </li>
+                <li>View balance</li>
+                <li>Quit</li>
+            </ol>
+            
+            <p>If you don't know the rules for these games you can look them up on the Internet. To make blackjack easier on 
+            yourself you can just make aces equal to 11 always, don't worry about suit, unless you really want to. Just generate
+            a random number between 1 and 11 for the card values. For baccarat you can use the modulo operator to get the value of
+            the cards.</p>
+            
+            <p>We talked about random numbers in <a href="lessons/lesson 7">lesson 7</a>. Also feel free to change the rules of 
+            the games to make things easier on yourself.</p>
+            
+            <p>Remember to use functions!</p>
+            
+            <h2>Text based adventure game</h2>
+            
+            <p>This one is the most open ended. For an example of what I mean check out
+            <a href="http://www.homestarrunner.com/dungeonman.html">Dungeonman</a> and also the sequel
+            <a href="http://www.videlectrix.com/thydungeonman2.html">Dungeonman 2</a>.</p>
+            
+            <p>This one will involve a lot of typing, but it might be the most fun. Let the player use commands like go north, 
+            get/give item, or look to get an idea of their surroundings.</p>
+            
+            <p>You might want to use a 2-d array to keep track of the map. Also, use function calls to get descriptions of the
+            area you are in.</p>
+            
+            <p>You don't have to get too nuts with this but do try and have fun!</p>
+            
+        </div>
+    </div>
+</body>
+
+</html> 

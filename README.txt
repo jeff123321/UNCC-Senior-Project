@@ -1,0 +1,1 @@
+This is the senior project I did for UNCC. It is an educational website designed to help people learn how to program in C++. It took a whole semester to complete. I got a B.
